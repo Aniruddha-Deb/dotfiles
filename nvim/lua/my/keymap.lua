@@ -21,7 +21,7 @@ map("n", "<leader>n", ":NvimTreeToggle<cr>")
 vim.keymap.set('n', '<leader>f', ":NvimTreeFocus<cr>", {noremap = true})
 
 -- CompetiTest maps
-map("n", "<leader>r", ":CompetiTestReceive<cr>")
+map("n", "<leader>r", ":CompetiTestReceive testcases<cr>")
 map("n", "<leader>b", ":CompetiTestRun<cr>")
 
 -- telescope maps

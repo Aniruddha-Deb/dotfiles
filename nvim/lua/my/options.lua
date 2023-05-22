@@ -7,6 +7,7 @@ vim.opt.inccommand = "nosplit"
 vim.opt.signcolumn = "yes"
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.exrc = true
 vim.opt.expandtab = true
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4

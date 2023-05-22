@@ -64,6 +64,13 @@ return require('packer').startup(function(use)
     -- a snippet engine (nvim-cmp needs it)
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
+
+    -- competitive programming
+    use {
+        'xeluxee/competitest.nvim',
+	requires = 'MunifTanjim/nui.nvim',
+	config = function() require('my.plugins.competitest') end
+    }
     
     -- Completion engine
     use {
