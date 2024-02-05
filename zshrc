@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# enable brew autocompletions
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -111,3 +114,8 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #-------------------------------------------------------------------------------
+
+# opam configuration
+[[ ! -r /Users/Sensei/.opam/opam-init/init.zsh ]] || source /Users/Sensei/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+[ -f "/Users/Sensei/.ghcup/env" ] && source "/Users/Sensei/.ghcup/env" # ghcup-env

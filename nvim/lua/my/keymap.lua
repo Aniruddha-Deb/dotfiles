@@ -8,8 +8,8 @@ end
 
 vim.g.mapleader = ' '
 
-map("n", "[b", ":bp<cr>")
-map("n", "]b", ":bn<cr>")
+map("n", "<leader>p", ":bp<cr>")
+map("n", "<leader>n", ":bn<cr>")
 map("n", "<leader>d", ":bp|bd #<CR>")
 map("n", "<leader>h", "<C-W>h")
 map("n", "<leader>j", "<C-W>j")
@@ -17,12 +17,14 @@ map("n", "<leader>k", "<C-W>k")
 map("n", "<leader>l", "<C-W>l")
 
 -- Some useful NvimTree mappings
-map("n", "<leader>n", ":NvimTreeToggle<cr>")
-vim.keymap.set('n', '<leader>f', ":NvimTreeFocus<cr>", {noremap = true})
+-- map("n", "<leader>n", ":NvimTreeToggle<cr>")
+-- vim.keymap.set('n', '<leader>f', ":NvimTreeFocus<cr>", {noremap = true})
 
 -- CompetiTest maps
-map("n", "<leader>r", ":CompetiTestReceive testcases<cr>")
-map("n", "<leader>b", ":CompetiTestRun<cr>")
+map("n", "[r", ":CompetiTest receive testcases<cr>")
+map("n", "[p", ":CompetiTest receive problem<cr>")
+map("n", "[c", ":CompetiTest receive contest<cr>")
+map("n", "[b", ":CompetiTest run<cr>")
 
 -- telescope maps
 local builtin = require('telescope.builtin')
@@ -37,8 +39,8 @@ map("n", "<silent> <C-l>", ":nohl<CR><C-l>")
 -- vim.keymap.set("n", "<expr>k", "v:count ? 'k' : 'gk'")
 
 -- jump to next/previous error
-map("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
-map("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
+-- map("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
+-- map("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
 
 -- some useful stuff from Angad's dotfiles
 -- Switch modes from home row
