@@ -38,6 +38,12 @@ return require('packer').startup(function(use)
         config = function() require('nvim-web-devicons').setup() end
     }
 
+    -- gen.nvim - copilot 
+    use {
+        'David-Kunz/gen.nvim',
+        config = function() require('my.plugins.gen') end
+    }
+
     -- gitsigns
     use {
         'lewis6991/gitsigns.nvim',
