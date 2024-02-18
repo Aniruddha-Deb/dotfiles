@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
     }
     use {
         'akinsho/bufferline.nvim',
+        tag = '*',
         config = function() require('my.plugins.bufferline') end
     }
 
@@ -47,7 +48,7 @@ return require('packer').startup(function(use)
     -- gitsigns
     use {
         'lewis6991/gitsigns.nvim',
-        tag = 'release',
+        tag = 'v0.7',
         config = function() require('gitsigns').setup() end
     }
 
