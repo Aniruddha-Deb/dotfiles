@@ -1,0 +1,86 @@
+#!/bin/bash
+
+source "$CONFIG_DIR/colors.sh"
+# This is a demo config to showcase some of the most important commands.
+# It is meant to be changed and configured, as it is intentionally kept sparse.
+# For a (much) more advanced configuration example see my dotfiles:
+# https://github.com/FelixKratz/dotfiles
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+ITEM_DIR="$CONFIG_DIR/items"
+
+##### Bar Appearance #####
+# Configuring the general appearance of the bar.
+# These are only some of the options available. For all options see:
+# https://felixkratz.github.io/SketchyBar/config/bar
+# If you are looking for other colors, see the color picker:
+# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+#
+bar_top=(
+  padding_left=0
+  padding_right=0
+  position=top
+  height=34
+  corner_radius=6
+  margin=10
+  y_offset=4
+  shadow=false
+  color=$BAR_COLOR
+)
+
+sketchybar --bar "${bar_top[@]}"
+
+##### Changing Defaults #####
+# We now change some default values, which are applied to all further items.
+# For a full list of all available item properties see:
+# https://felixkratz.github.io/SketchyBar/config/items
+
+default=(
+  padding_left=5
+  padding_right=5
+  icon.font="SF Pro:Semibold:14.0"
+  label.font="SF Pro:Semibold:13.0"
+  icon.color=$WHITE
+  label.color=$WHITE
+  background.color=$ITEM_BG_COLOR
+  background.corner_radius=5
+  background.height=22
+  icon.padding_left=4
+  icon.padding_right=4
+  label.padding_left=4
+  label.padding_right=4
+)
+sketchybar --default "${default[@]}"
+
+##### Adding Left Items #####
+
+# source "$ITEM_DIR/apple_logo.sh"
+# TODO add spaces
+source "$ITEM_DIR/front_app.sh"
+source "$ITEM_DIR/spaces.sh"
+
+##### Adding Right Items #####
+
+source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/wifi.sh"
+source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/ram.sh"
+source "$ITEM_DIR/disk.sh"
+source "$ITEM_DIR/netspeed.sh"
+# source "$ITEM_DIR/filler.sh"
+
+sketchybar --add bracket lbkt front_app space_separator space.1 space.2 space.3 space.4 space.5 space.6 left \
+           --set lbkt    background.color=$BRACKET_COLOR \
+                         blur_radius=32 \
+                         background.corner_radius=6 \
+                         background.height=34
+
+sketchybar --add bracket rbkt calendar battery net cpu ram disk netspeed.down netspeed.up right \
+           --set rbkt  background.color=$BRACKET_COLOR \
+                       blur_radius=32 \
+                       background.corner_radius=6 \
+                       background.height=34
+
+##### Force all scripts to run the first time (never do this in a script) #####
+sketchybar --update

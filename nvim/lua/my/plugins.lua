@@ -35,14 +35,8 @@ return require('packer').startup(function(use)
 
     -- web-devicons for filetypes
     use {
-        'kyazdani42/nvim-web-devicons',
+        'nvim-tree/nvim-web-devicons',
         config = function() require('nvim-web-devicons').setup() end
-    }
-
-    -- gen.nvim - copilot 
-    use {
-        'David-Kunz/gen.nvim',
-        config = function() require('my.plugins.gen') end
     }
 
     -- gitsigns
@@ -74,10 +68,11 @@ return require('packer').startup(function(use)
 
     -- competitive programming
     use {
-        'xeluxee/competitest.nvim',
+        'neov5/competitest.nvim',
 	requires = 'MunifTanjim/nui.nvim',
 	config = function() require('my.plugins.competitest') end
     }
+
     
     -- Completion engine
     use {
