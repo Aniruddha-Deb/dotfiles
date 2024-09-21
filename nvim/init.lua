@@ -1,4 +1,3 @@
-
-require('my.options')
-require('my.plugins')
-require('my.keymap')
+require("config.options")
+require("config.keymap")
+require("config.lazy")

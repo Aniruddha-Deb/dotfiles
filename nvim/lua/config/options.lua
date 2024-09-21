@@ -1,5 +1,3 @@
--- TODO explain all of this
--- vim.cmd("colorscheme monokai")
 vim.opt.termguicolors = true
 vim.opt.encoding = "utf-8"
 vim.opt.mouse = "a"
